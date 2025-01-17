@@ -24,8 +24,9 @@ const corsConfig = {
 app.use(cors(corsConfig));
 app.options("", cors(corsConfig));
 
-const uri =
-  "mongodb+srv://dbUser:ASd2C66WzvIp0e9r@fristusemongodb.yjaddi5.mongodb.net/?retryWrites=true&w=majority";
+// const uri =
+//   "mongodb+srv://dbUser:ASd2C66WzvIp0e9r@fristusemongodb.yjaddi5.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://platinumys:platinumys@platinumys.6lbur.mongodb.net/";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -51,16 +52,28 @@ async function run() {
     const officeOrderCollection = client
       .db("Platinumys")
       .collection("OrderFromOffice");
-    const expenseCollection = client.db("Platinumys").collection("expenseCollection");
-    const salaryCollection = client.db("Platinumys").collection("salaryCollection");
-    const productCollection = client.db("Platinumys").collection("productCollection");
-    const productCategory = client.db("Platinumys").collection("productCategory");
+    const expenseCollection = client
+      .db("Platinumys")
+      .collection("expenseCollection");
+    const salaryCollection = client
+      .db("Platinumys")
+      .collection("salaryCollection");
+    const productCollection = client
+      .db("Platinumys")
+      .collection("productCollection");
+    const productCategory = client
+      .db("Platinumys")
+      .collection("productCategory");
     const voucherCodes = client.db("Platinumys").collection("voucherCodes");
     const sales = client.db("Platinumys").collection("sales");
     const salesReturns = client.db("Platinumys").collection("salesReturns");
     const productions = client.db("Platinumys").collection("productions");
-    const customProductions = client.db("Platinumys").collection("customProductions");
-    const productionCategory = client.db("Platinumys").collection("productionCategory");
+    const customProductions = client
+      .db("Platinumys")
+      .collection("customProductions");
+    const productionCategory = client
+      .db("Platinumys")
+      .collection("productionCategory");
     const defaultSize = client.db("Platinumys").collection("defaultSizes");
 
     // Middleware for parsing JSON data
@@ -83,7 +96,7 @@ async function run() {
       salesReturns,
       productions,
       productionCategory,
-      customProductions
+      customProductions,
     };
 
     // Routes
